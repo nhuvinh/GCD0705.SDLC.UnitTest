@@ -25,18 +25,74 @@ namespace Calculator.GCD0705.Tests
 		// A: Act
 		// A: Assert
 
-		[Test]
-		public void Add_Input1And2_Return3()
+		[TestCase(1, 1, 2)]
+		[TestCase(1, 3, 4)]
+		public void Add_Input1And2_Return3(int a, int b, int expectedResult)
 		{
 			// Arrage
-			int a = 1;
+
+
+			// Act
+			var actualResult = math.Add(a, b);
+
+			// Assert
+			Assert.AreEqual(expectedResult, actualResult);
+		}
+		[Test]
+		public void Sub_Input3And2_Return1()
+		{
+			// Arrange
+			int a = 3;
 			int b = 2;
 
 			// Act
-			var result = math.Add(1, 2);
+			var actualResult = math.Sub(a, b);
+			var expectedResult = 1;
 
 			// Assert
-			Assert.AreEqual(3, result);
+			Assert.AreEqual(expectedResult, actualResult);
+		}
+
+		[Test]
+		public void Multiply_Input2And3_Return6()
+		{
+			// Arrange
+			int a = 2;
+			int b = 3;
+
+			// Act
+			var actualResult = math.Multiply(a, b);
+			var expectedResult = 6;
+
+			// Assert
+			Assert.AreEqual(expectedResult, actualResult);
+		}
+
+		[Test]
+		public void Divide_InputsAre10And2_Return5()
+		{
+			// Arrange
+			int a = 10;
+			int b = 2;
+
+			// Act
+			var actualResult = math.Divide(10, 2);
+			var expectedResult = 5;
+
+			// Assert
+			Assert.AreEqual(expectedResult, actualResult);
+		}
+
+		[Test]
+		public void Divide_DenominatorEqualZero_ThrowDivideByZeroException()
+		{
+			// Arrange
+			int a = 10;
+			int b = 0;
+
+			// Act 
+
+			// Assert
 		}
 	}
 }

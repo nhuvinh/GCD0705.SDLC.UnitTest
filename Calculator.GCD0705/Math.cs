@@ -25,7 +25,8 @@ namespace Calculator.GCD0705
 
 		public int Divide(int a, int b)
 		{
-			return a / b;
+			if (b == 0) throw new System.DivideByZeroException();
+			else return a / b;
 		}
 	}
 }
