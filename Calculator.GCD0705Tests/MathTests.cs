@@ -19,7 +19,6 @@ namespace Calculator.GCD0705.Tests
 			math = new Math();
 		}
 
-
 		// AAA
 		// A: Arrange
 		// A: Act
@@ -76,7 +75,7 @@ namespace Calculator.GCD0705.Tests
 			int b = 2;
 
 			// Act
-			var actualResult = math.Divide(10, 2);
+			var actualResult = math.Divide(a, b);
 			var expectedResult = 5;
 
 			// Assert
@@ -93,6 +92,7 @@ namespace Calculator.GCD0705.Tests
 			// Act 
 
 			// Assert
+			Assert.Throws<DivideByZeroException>(() => math.Divide(a, b));
 		}
 	}
 }
